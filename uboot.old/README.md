@@ -13,3 +13,11 @@ DDR3 Training:
 uboot:
 
 	tail -c +49153 uboot.mtd0.dd |head -c 675420 > uboot.bin
+
+Recovery image:
+
+	head -c 724576 uboot.mtd0.dd > uboot.recovery.bin
+
+Boot recovery image (with terminal):
+
+	kwboot -b uboot.recovery.bin -p -t /dev/ttyUSB0
