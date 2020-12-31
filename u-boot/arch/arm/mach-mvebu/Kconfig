@@ -149,6 +149,10 @@ config TARGET_DS414
 	bool "Support Synology DS414"
 	select MV78230
 
+config TARGET_MIRABOX
+	bool "Support GlobalScale Mirabox"
+	select MV78230
+
 config TARGET_MAXBCM
 	bool "Support maxbcm"
 	select MV78460
@@ -189,6 +193,7 @@ config SYS_BOARD
 	default "mvebu_armada-8k" if TARGET_MVEBU_ARMADA_8K
 	default "db-mv784mp-gp" if TARGET_DB_MV784MP_GP
 	default "ds414" if TARGET_DS414
+	default "mirabox" if TARGET_MIRABOX
 	default "maxbcm" if TARGET_MAXBCM
 	default "theadorable" if TARGET_THEADORABLE
 	default "a38x" if TARGET_CONTROLCENTERDC
@@ -206,6 +211,7 @@ config SYS_CONFIG_NAME
 	default "mvebu_armada-8k" if TARGET_MVEBU_ARMADA_8K
 	default "db-mv784mp-gp" if TARGET_DB_MV784MP_GP
 	default "ds414" if TARGET_DS414
+	default "mirabox" if TARGET_MIRABOX
 	default "maxbcm" if TARGET_MAXBCM
 	default "theadorable" if TARGET_THEADORABLE
 	default "turris_omnia" if TARGET_TURRIS_OMNIA
@@ -227,6 +233,7 @@ config SYS_VENDOR
 	default "solidrun" if TARGET_CLEARFOG
 	default "kobol" if TARGET_HELIOS4
 	default "Synology" if TARGET_DS414
+	default	"globalscale" if TARGET_MIRABOX
 	default "CZ.NIC" if TARGET_TURRIS_OMNIA
 	default "CZ.NIC" if TARGET_TURRIS_MOX
 	default "gdsys" if TARGET_CONTROLCENTERDC
